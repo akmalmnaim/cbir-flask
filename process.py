@@ -43,7 +43,7 @@ def multiotsu_threshold(img):
     img =cv2.imread(img, cv2.IMREAD_GRAYSCALE)
     res = img.copy()
     thresh_multiotsu= threshold_multiotsu(img, window_size=25)
-    thresh_multiotsu = cv2.ximgproc.niBlackThreshold(img, maxValue=255, type=cv2.THRESH_BINARY_INV, blockSize=2*11+1, k=-0.2, binarizationMethod=cv2.ximgproc.BINARIZATION_MULTIOTSU)
+    thresh_multiotsu = cv2.ximgproc.multiotsuThreshold(img, maxValue=255, type=cv2.THRESH_BINARY_INV, blockSize=2*11+1, k=-0.2, binarizationMethod=cv2.ximgproc.BINARIZATION_MULTIOTSU)
 
     binary_multiotsu = img > thresh_multiotsu
 
